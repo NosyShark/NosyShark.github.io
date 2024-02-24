@@ -18,6 +18,8 @@ website:
           - index.qmd
       - section: "Current Work"
         contents:
+          - shyshark.qmd
+
           
     left:
       - href: index.qmd
