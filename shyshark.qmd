@@ -12,13 +12,7 @@ rm(list=ls())
 
 To run the code you will need the packages tidyverse, sp, sf, raster, lwgeom, terra, stars, exactextractr, hrbrthemes,cowplot, rinat, prettymapr, ggspatial, leaflet, mapview, htmltools, leafpop, rnaturalearth, and rnaturalearthdata.
 
-```{r packages, echo=FALSE}
-install.packages(c("tidyverse", "sp", "raster", "sf", "lwgeom", "terra", "stars", "exactextractr")) 
-install.packages(c("cowplot", "hrbrthemes", "knitr", "leaflet", "htmltools", "rosm", "ggspatial", "rnaturalearth", "mapview", "tmap")) 
-install.packages("rmarkdown", "prettymapr", "leaflet", "htmltools", "rinat", "rnaturalearth", "rnaturalearthdata")
-```
-
-```{r}
+```{r, echo=TRUE, results='hide'}
 my_packages <- c("tidyverse", "sp", "sf", "raster", "lwgeom", "terra", "stars", "exactextractr", "hrbrthemes","cowplot", "rinat", "prettymapr", "ggspatial", "leaflet", "mapview", "htmltools", "leafpop", "rnaturalearth", "rnaturalearthdata") 
 lapply(my_packages, require, character.only = TRUE)
 ```
@@ -49,7 +43,7 @@ darkshark <- st_as_sf(darkshark, coords = c("longitude", "latitude"), crs = 4326
 
 If we want to avoid a whole lot a pain in the future (generally a good habit to create when working with GIS) we need to check the class and coordinate reference system (CRS) of our dataframes
 
-```{r}
+```{r, echo=TRUE, results='hide'}
 class(puffyshark)
 class(darkshark)
 
@@ -63,7 +57,7 @@ But wait! There's some more filtering that needs to happen - we want to exclude 
 
 We start by creating a dataframe for the land surface and checking that the CRS matches our other dataframes' CRS.
 
-```{r}
+```{r, echo=TRUE, results='hide'}
 world_land <- ne_countries(scale = "medium", returnclass = "sf", country = "south africa")
 
 st_crs(world_land)
