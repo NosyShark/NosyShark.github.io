@@ -12,11 +12,13 @@ rm(list=ls())
 
 To run the code you will need the packages tidyverse, sp, sf, raster, lwgeom, terra, stars, exactextractr, hrbrthemes,cowplot, rinat, prettymapr, ggspatial, leaflet, mapview, htmltools, leafpop, rnaturalearth, and rnaturalearthdata.
 
-```{r}
+```{r packages, echo=FALSE}
 install.packages(c("tidyverse", "sp", "raster", "sf", "lwgeom", "terra", "stars", "exactextractr")) 
 install.packages(c("cowplot", "hrbrthemes", "knitr", "leaflet", "htmltools", "rosm", "ggspatial", "rnaturalearth", "mapview", "tmap")) 
 install.packages("rmarkdown", "prettymapr", "leaflet", "htmltools", "rinat", "rnaturalearth", "rnaturalearthdata")
+```
 
+```{r}
 my_packages <- c("tidyverse", "sp", "sf", "raster", "lwgeom", "terra", "stars", "exactextractr", "hrbrthemes","cowplot", "rinat", "prettymapr", "ggspatial", "leaflet", "mapview", "htmltools", "leafpop", "rnaturalearth", "rnaturalearthdata") 
 lapply(my_packages, require, character.only = TRUE)
 ```
