@@ -136,6 +136,8 @@ mapview(oceanshark_ds, col.regions = "#422CB2", layer.name = "Dark shyshark", le
                      zcol = c("user_login", "click_url", "id")))
 ```
 
+Anywho - thank you for sticking with me through this! As a reward here's a little picture of a shyshark I took a while back.
+
 ![](images/WhatsApp Image 2024-02-24 at 14.27.55.jpeg)
 
 *Happy Eddy - 'Haploblepharus edwardsii' - photographed at Windmill Beach, Cape Town.*
