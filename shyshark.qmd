@@ -136,4 +136,8 @@ mapview(oceanshark_ds, col.regions = "#422CB2", layer.name = "Dark shyshark", le
                      zcol = c("user_login", "click_url", "id")))
 ```
 
-\*Thank you Jasper Slingsby for providing the base code for this - you can access it through his website plantecolog.y - and for providing the tools to start playing around to make a website.
+![](images/WhatsApp Image 2024-02-24 at 14.27.55.jpeg)
+
+*Happy Eddy - 'Haploblepharus edwardsii' - photographed at Windmill Beach, Cape Town.*
+
+*Thank you [Jasper Slingsby](https://www.ecologi.st/) for providing the base code for this. To access it go to his teaching website [plantecolo.gy](plantecolo.gy).*
