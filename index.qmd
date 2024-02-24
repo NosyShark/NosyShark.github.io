@@ -5,3 +5,5 @@ title: "Nosy Whale"
 My name is Emma. I am a biologist in my honours year at the University of Cape Town.
 
 I am interested in marine megafauna. It's easy to realise our insignificance when facing a gentle giant. I am curious about whale and shark behaviour, communication, distribution, and genetics. I am interested in how climate change is altering nature and how nature is evolving in spite of it. I am interested in humans and how they interact with the world around them.
+
+For now this website will be dedicated to getting better at coding. So it'll likely be code and some GIS visuals for projects. Hopefully a link to a publication sometime next year.
