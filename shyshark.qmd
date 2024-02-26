@@ -108,7 +108,9 @@ leaflet() %>%
                    group = "Haploblepharus pictus", 
                    radius = 1, 
                    color = "#422CB2")%>% 
-  addLegend(position = "topright", colors = c("#85B22C", "#422CB2"), labels = c("Puffadder shyshark", "Dark shyshark"))
+  addLegend(position = "topright", 
+            colors = c("#85B22C", "#422CB2"), 
+            labels = c("Puffadder shyshark", "Dark shyshark"))
 ```
 
 Let's try a different package - mapview - to create an interactive map with a popup for each data point that gives a link to that point's iNaturalist observation.
