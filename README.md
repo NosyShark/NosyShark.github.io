@@ -1,6 +1,7 @@
 # Nosy Whale
 <br>
 This GIS shows the distribution of endemic shyshark species in southern African waters. <br>
+The file you're looking for is shyshark.qmd <br>
 The chosen sharks are the Puffadder shyshark and the dark shyshark. There are two other endemic species, but they are very cryptic and not enough observations have been made on iNaturalist to include them in these maps. <br>
 <br> 
 
