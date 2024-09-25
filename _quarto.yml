@@ -19,7 +19,7 @@ website:
       - section: "Current Work"
         contents:
           - shyshark.qmd
-      - sections: "Book Reviews"
+      - section: "Book Reviews"
         contents:
           - lifechanging.qmd
           - silentearth.qmd
