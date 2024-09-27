@@ -15,3 +15,5 @@ In the fourth part, Goulson imagines a world devoid of insects (post-apocalypse)
 After sounding the alarm bells, the concluding section wisely prescribes solutions: public awareness, urban greening, engaging youth, and sustainable agricultural practices that are echoed across many conservation books. Although there are some suggestions addressing governing bodies, this section falls short in truly addressing systemic issues and the need for broader political and corporate engagement.
 
 Goulson's honesty about the situation at hand, coupled with his clear communication of the science, makes this book an essential read for anyone concerned about the environment. However, his emphasis on solutions within the UK (global north) and the lack of focus on how to engage big corporations and government officials are notable shortcomings. Despite these issues, *Silent Earth* is a powerful wake-up call that stresses the urgent need for action to prevent an ecological catastrophe.
+
+![Cover of Silent Earth by Dave Goulson](images/silentearth.jpg){fig-align="left"}

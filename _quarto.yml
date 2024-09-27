@@ -9,6 +9,10 @@ website:
         menu:
           - text: Source Code
             url: https://github.com/NosyShark/NosyWhale/tree/main
+      - icon: instagram
+        menu:
+          - text: Connect
+            url: https://www.instagram.com/emmiswann/
   sidebar:
     style: "floating"
     search: true
@@ -32,7 +36,9 @@ website:
 
 format:
   html:
-    theme: sandstone
+    theme: 
+      light: minty.css
+      dark: darkminty.css
     css: styles.css
     toc: true
 
