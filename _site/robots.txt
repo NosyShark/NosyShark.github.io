@@ -1,1 +1,1 @@
-Sitemap: https://github.com/NosyShark/NosyShark.github.io/sitemap.xml
+Sitemap: https://NosyShark.github.io/sitemap.xml
