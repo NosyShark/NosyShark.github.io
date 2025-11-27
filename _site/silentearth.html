@@ -229,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In the fourth part, Goulson imagines a world devoid of insects (post-apocalypse), painting a harrowing picture of the future. This speculative scenario is the most emotionally charged section of the book, designed to shock readers into realizing the potential consequences of inaction. Goulson’s vivid descriptions of environmental and economic collapse and compelling narrative make this section a visceral and haunting reminder of what is at stake.</p>
 <p>After sounding the alarm bells, the concluding section wisely prescribes solutions: public awareness, urban greening, engaging youth, and sustainable agricultural practices that are echoed across many conservation books. Although there are some suggestions addressing governing bodies, this section falls short in truly addressing systemic issues and the need for broader political and corporate engagement.</p>
 <p>Goulson’s honesty about the situation at hand, coupled with his clear communication of the science, makes this book an essential read for anyone concerned about the environment. However, his emphasis on solutions within the UK (global north) and the lack of focus on how to engage big corporations and government officials are notable shortcomings. Despite these issues, <em>Silent Earth</em> is a powerful wake-up call that stresses the urgent need for action to prevent an ecological catastrophe.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="images/silentearth.jpg" class="img-fluid figure-img"></p>
 <figcaption>Cover of Silent Earth by Dave Goulson</figcaption>
@@ -475,7 +475,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/NosyShark\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

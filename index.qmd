@@ -1,11 +1,11 @@
 ---
-title: "Emma Swanepoel"
+title: "EMMA SWANEPOEL"
 ---
 
-Hi, my name is Emma. I am a biologist in my honours year at the University of Cape Town.
+Hi, my name is Emm. I am a biologist doing my Masters at the University of Cape Town.
 
 I am a big nerd for marine megafauna. It's easy to realise our insignificance when facing a gentle giant. I am interested in whale and shark behaviour, communication, distribution, and genetics. I am obsessed with how climate change is altering nature and how nature is evolving because of it. I am interested in humans and how they interact with the world around them.
 
-For now this website will be dedicated to getting better at coding in R. So it'll likely be code and some GIS visuals for projects. Hopefully a link to a publication sometime next year.
+Disclaimer: I am a biologist - not a developer. This website is janky while I figure shit out.
 
 ![](images/WhatsApp%20Image%202024-02-24%20at%2014.19.22.jpeg){width="290"}
