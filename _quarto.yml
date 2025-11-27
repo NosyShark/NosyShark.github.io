@@ -27,9 +27,6 @@ website:
         contents:
           - lifechanging.qmd
           - silentearth.qmd
-      - section: "Interesting Critters"
-        contents:
-          - 
 
           
     left:

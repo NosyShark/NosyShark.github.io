@@ -30,16 +30,19 @@ These sharks, *Notorynchus cepedianus*, resemble ancient sharks (we're talking o
 
 This is a distributional map of some cool sharks around the coast of Southern Africa (and the Southern Hemisphere - in the case of sevengill sharks).
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 rm(list=ls())
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 my_packages <- c("tidyverse", "sp", "sf", "raster", "lwgeom", "terra", "stars", "exactextractr", "hrbrthemes","cowplot", "rinat", "prettymapr", "ggspatial", "leaflet", "mapview", "htmltools", "leafpop", "rnaturalearth", "rnaturalearthdata") 
 lapply(my_packages, require, character.only = TRUE)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 puffyshark <- get_inat_obs(taxon_name = "Haploblepharus edwardsii", maxresults = 600) 
 
 darkshark <- get_inat_obs(taxon_name = "Haploblepharus pictus", maxresults = 600)
@@ -59,7 +62,8 @@ gully <- get_inat_obs(taxon_name = "Triakis megalopterus", maxresults = 600)
 cowshark <- get_inat_obs(taxon_name = "Notorynchus cepedianus", maxresults = 600)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 puffyshark <- puffyshark %>% filter(positional_accuracy < 100 & latitude <0 & !is.na(latitude) & quality_grade == "research")
 
 darkshark <- darkshark %>% filter(positional_accuracy < 100 & latitude <0 & !is.na(latitude) & quality_grade == "research")
@@ -79,7 +83,8 @@ gully <- gully %>% filter(positional_accuracy < 100 & latitude <0 & !is.na(latit
 cowshark <- cowshark %>% filter(positional_accuracy < 100 & latitude <0 & !is.na(latitude) & quality_grade == "research")
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 puffyshark <- st_as_sf(puffyshark, coords = c("longitude", "latitude"), crs = 4326) 
 
 darkshark <- st_as_sf(darkshark, coords = c("longitude", "latitude"), crs = 4326)
@@ -99,7 +104,8 @@ gully<- st_as_sf(gully, coords = c("longitude", "latitude"), crs = 4326)
 cowshark<- st_as_sf(cowshark, coords = c("longitude", "latitude"), crs = 4326)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 class(puffyshark)
 class(darkshark)
 class(brownshark)
@@ -121,13 +127,15 @@ st_crs(gully)
 st_crs(cowshark)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 world_land <- ne_countries(scale = "medium", returnclass = "sf", country = "south africa")
 
 st_crs(world_land)
 ```
 
-```{r, echo=FALSE}
+```{r}
+#| include: false
 landsharks_ps <- st_join(puffyshark, world_land, join = st_disjoint) %>% filter(!is.na(iso_a2))
 oceanshark_ps <- puffyshark[puffyshark$geometry %in% landsharks_ps$geometry,] 
 
@@ -154,23 +162,6 @@ oceanshark_gullys <- gully[gully$geometry %in% landsharks_gullys$geometry,]
 
 landsharks_cows <- st_join(cowshark, world_land, join = st_disjoint) %>% filter(!is.na(iso_a2))
 oceanshark_cows <- cowshark[cowshark$geometry %in% landsharks_cows$geometry,]
-```
-
-```{}
-```
-
-```{r, echo=FALSE}
-ggplot() + 
-  annotation_map_tile(type = "osm", progress = "none") + 
-  geom_sf(data = oceanshark_ps, color = "#C1FFC1") + 
-  geom_sf(data = oceanshark_ds, color = "#B4EEB4")+ 
-  geom_sf(data = oceanshark_bs, color = "#9BCD9B")+ 
-  geom_sf(data = oceanshark_pjs, color = "#79CDCD")+ 
-  geom_sf(data = oceanshark_leos, color = "#528B8B")+ 
-  geom_sf(data = oceanshark_yspotc, color = "#FFEC8B")+ 
-  geom_sf(data = oceanshark_tigerc, color = "#FFA07A")+ 
-  geom_sf(data = oceanshark_gullys, color = "#EEAEEE")+ 
-  geom_sf(data = oceanshark_cows, color = "#EEA9B8")
 ```
 
 ```{r, echo=FALSE}
@@ -211,7 +202,7 @@ leaflet() %>%
   addCircleMarkers(data = oceanshark_cows, 
                    group = "Notorynchus cepedianus", 
                    radius = 1, 
-                   color = "#EEA9B8")  
+                   color = "#EEA9B8")%>%  
   addLegend(position = "topright", 
             colors = c("#C1FFC1", "#B4EEB4", "#9BCD9B", "#79CDCD", "#528B8B", "#FFEC8B", "#FFA07A", "#EEAEEE", "#EEA9B8"), 
             labels = c("Puffadder shyshark", "Dark shyshark", "Brown shyshark", "Pyjama catshark", "Leopard catshark", "Yellow-spotted catshark", "Tiger catshark", "Spotted gully", "Broadnose Sevengill"))
@@ -247,42 +238,56 @@ loceanshark_cows <- oceanshark_cows %>%
 ```
 
 ```{r, echo=FALSE}
-mapview(oceanshark_ps, col.regions = "#C1FFC1", layer.name = "Puffadder shyshark", legend = TRUE,
+sharkmap <- 
+mapview(oceanshark_ps, col.regions = "#C1FFC1", layer.name = "Puffadder shyshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_ps,
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_ds, col.regions = "#B4EEB4", layer.name = "Dark shyshark", legend = TRUE,
+mapview(oceanshark_ds, col.regions = "#B4EEB4", layer.name = "Dark shyshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_ds, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_bs, col.regions = "#9BCD9B", layer.name = "Brown shyshark", legend = TRUE,
+mapview(oceanshark_bs, col.regions = "#9BCD9B", layer.name = "Brown shyshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_bs, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_pjs, col.regions = "#79CDCD", layer.name = "Pyjama catshark", legend = TRUE,
+mapview(oceanshark_pjs, col.regions = "#79CDCD", layer.name = "Pyjama catshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_pjs, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_leos, col.regions = "#528B8B", layer.name = "Leopard catshark", legend = TRUE,
+mapview(oceanshark_leos, col.regions = "#528B8B", layer.name = "Leopard catshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_leos, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_yspotc, col.regions = "#FFEC8B", layer.name = "Yellow-spot catshark", legend = TRUE,
+mapview(oceanshark_yspotc, col.regions = "#FFEC8B", layer.name = "Yellow-spot catshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_yspotc, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_tigerc, col.regions = "#FFA07A", layer.name = "Tiger catshark", legend = TRUE,
+mapview(oceanshark_tigerc, col.regions = "#FFA07A", layer.name = "Tiger catshark", legend = FALSE,
         popup = 
           popupTable(loceanshark_tigerc, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_gullys, col.regions = "#EEAEEE", layer.name = "Spotted gully shark", legend = TRUE,
+mapview(oceanshark_gullys, col.regions = "#EEAEEE", layer.name = "Spotted gully shark", legend = FALSE,
         popup = 
           popupTable(loceanshark_gullys, 
                      zcol = c("user_login", "click_url", "id"))) + 
-mapview(oceanshark_cows, col.regions = "#EEA9B8", layer.name = "Broadnose Sevengill shark", legend = TRUE,
+mapview(oceanshark_cows, col.regions = "#EEA9B8", layer.name = "Broadnose Sevengill shark", legend = FALSE, 
         popup = 
           popupTable(loceanshark_cows, 
                      zcol = c("user_login", "click_url", "id"))) 
+
+sharkmap@map %>% 
+  leaflet::hideGroup(c("Puffadder shyshark", "Dark shyshark", "Brown shyshark",
+                       "Pyjama catshark", "Leopard catshark", "Yellow-spot catshark",
+                       "Tiger catshark", "Spotted gully shark", "Broadnose Sevengill shark")) %>%
+  leaflet::clearControls() %>%
+  leaflet::addLegend(position = "topright",
+                     colors = c("#C1FFC1", "#B4EEB4", "#9BCD9B", "#79CDCD", "#528B8B", 
+                                "#FFEC8B", "#FFA07A", "#EEAEEE", "#EEA9B8"),
+                     labels = c("Puffadder shyshark", "Dark shyshark", "Brown shyshark",
+                                "Pyjama catshark", "Leopard catshark", "Yellow-spot catshark","Tiger catshark", "Spotted gully shark", "Broadnose Sevengill shark"),
+                     title = "Shark Species",
+                     opacity = 1)
 ```
 
 Anywho - thank you for sticking with me through this! As a reward here's a little picture of a shyshark I took a while back.
