@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-06-14">
-<meta name="description" content="Dave Goulson gives a powerful and urgent examination of the global collapse of insect populations - and why it matters far more than most people realise.">
 
-<title>Silent Earth – Nosy Whale</title>
+<title>Book Reviews – Nosy Whale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,7 +73,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -291,25 +349,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Silent Earth</h1>
+<h1 class="title">Book Reviews</h1>
 </div>
 
-<div>
-  <div class="description">
-    Dave Goulson gives a powerful and urgent examination of the global collapse of insect populations - and why it matters far more than most people realise.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 14, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -319,23 +366,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>Silent Earth</em> is a compelling and urgent call to action. In it, biologist Dave Goulson highlights the critical role insects play in our ecosystems and their alarming rates of decline. Through scientific thoroughness and accessible writing, Goulson makes a strong case for why we need to pay attention to the plight of insects. His candid approach to discussing the grim reality of biodiversity loss is refreshing and disheartening, but the dry humour peppered throughout the book and insect facts interspersed between chapters helps to break the tension. Goulson divides his book into five parts – he explores the origins and significance of insects, provides evidence of declines, lists potential reasons for these declines, imagines a world without insects, and finally suggests mitigation strategies.</p>
-<p>In part one, Goulson explores the fascinating world of insects, tracing their evolution and highlighting their importance and inherent value. He emphasizes the critical ecosystem services provided, including pollination, decomposition, and pest control. This section underscores the sheer diversity and biomass of insects, establishing a strong foundation for understanding their indispensable role in maintaining ecological balance.</p>
-<p>Goulson then presents evidence of the widespread decline of insect populations. He acknowledges the paucity of research in this field and the limitations inherent in many studies. Despite these hurdles, the trends of insect declines are unmistakable. Goulson’s intellectual honesty and vulnerability stands out as he admits that even he is “not absolutely certain where the truth lies”. Goulson highlights the critical issue of “shifting baselines,” where each generation perceives a progressively degraded environment as the new normal. He broadens the scope beyond insects to address the overall loss of biodiversity, driving home the point that the decline of insects is part of a larger ecological crisis. This section is sobering as it stresses the urgent need for reliable research.</p>
-<p>The third part delves into the multifaceted causes of insect declines. Goulson systematically examines the impacts of habitat loss and fragmentation, pesticides, herbicides, and insecticides, fertilisers, invasive species (plants and animals) and their associated dangers, and climate change. He argues these factors likely compound into a “death by a thousand cuts”, with industrial agriculture as the undeniable driving force. Goulson’s alarming rhetoric acts as a wake-up call, reproaching agrichemical companies’ manipulation of research and advocating for precaution in future environmental management practices. Goulson’s exhortation that “we are committing ecocide on a biblical scale” cuts through niceties with a sobering call for immediate action and precaution.</p>
-<p>In the fourth part, Goulson imagines a world devoid of insects (post-apocalypse), painting a harrowing picture of the future. This speculative scenario is the most emotionally charged section of the book, designed to shock readers into realizing the potential consequences of inaction. Goulson’s vivid descriptions of environmental and economic collapse and compelling narrative make this section a visceral and haunting reminder of what is at stake.</p>
-<p>After sounding the alarm bells, the concluding section wisely prescribes solutions: public awareness, urban greening, engaging youth, and sustainable agricultural practices that are echoed across many conservation books. Although there are some suggestions addressing governing bodies, this section falls short in truly addressing systemic issues and the need for broader political and corporate engagement.</p>
-<p>Goulson’s honesty about the situation at hand, coupled with his clear communication of the science, makes this book an essential read for anyone concerned about the environment. However, his emphasis on solutions within the UK (global north) and the lack of focus on how to engage big corporations and government officials are notable shortcomings. Despite these issues, <em>Silent Earth</em> is a powerful wake-up call that stresses the urgent need for action to prevent an ecological catastrophe.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="images/silentearth.jpg" class="img-fluid figure-img"></p>
-<figcaption>Cover of Silent Earth by Dave Goulson</figcaption>
-</figure>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1718316000000" data-listing-file-modified-sort="1764322388157" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="600">
+<a href="./silentearth.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/silentearth.jpg" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Silent Earth
+</h5>
+<div class="card-text listing-description delink">
+<p>Dave Goulson gives a powerful and urgent examination of the global collapse of insect populations - and why it matters far more than most people realise.</p>
 </div>
-
-
-
-</main> <!-- /main -->
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 14, 2024
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-date-sort="1712872800000" data-listing-file-modified-sort="1764322402700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="614">
+<a href="./lifechanging.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/lifechanging.jpg" class="thumbnail-image card-img" style="height: 250px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Life Changing
+</h5>
+<div class="card-text listing-description delink">
+<p>Helen Pilcher unpacks the remarkable - and often unintended - ways humans have reshaped life on Earth.</p>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 12, 2024
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
